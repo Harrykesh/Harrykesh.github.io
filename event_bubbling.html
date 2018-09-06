@@ -1,0 +1,56 @@
+<html lang ="en" xlmns = "http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset = "utf-8"/>
+        <style>
+            #outer {
+                width: 200px;
+                height: 200px;
+                background-color:red;
+            }
+            #middle {
+                width: 50%;
+                height: 50%;
+                background-color: blue;
+                top: 25%;
+                left: 25%;
+                position: relative
+                }
+            #inner {
+                width: 50%;
+                height: 50%;
+                background-color: green;
+                position: relative;
+                top: 25%;
+                left: 25%;
+            }
+              
+        </style>
+        <script>
+            window.onload = function(){
+                    document.getElementById("inner").addEventListener("click", innerdiv, false);   
+                }
+            function innerdiv(){
+                appendText("inner div clicked");
+                window.even.cancelBubble = true;
+                
+            }
+            function appendText(s){
+                var li = document.createElement("li");
+                li.innerText = s;
+                document.getElementById("evenorder").appendChild(li);
+            }
+            
+        </script>
+    </head>
+    <body id = "bod">
+        <div id = "outer">
+            <div id = "middle">
+                <div id= "inner" >
+                </div>
+            </div>
+        </div>
+        <ol id = "evenorder"></ol>
+        
+    </body>
+      
+</html>
